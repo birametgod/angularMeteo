@@ -7,7 +7,6 @@
 
 # dependencies
 /node_modules
-/.circleci
 
 # IDEs and editors
 /.idea
