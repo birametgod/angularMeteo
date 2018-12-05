@@ -1,0 +1,6 @@
+<h2>Authentification</h2>
+<input type="text" [(ngModel)]="log">
+<input type="text" [(ngModel)]="pass">
+<button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn(log,pass)">Se connecter</button>
+<button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>
+<app-message></app-message>
