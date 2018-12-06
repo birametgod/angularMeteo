@@ -4,6 +4,7 @@ import { USERS } from "../user-data"
 import { AuthService } from "../auth.service";
 import { log } from 'util';
 import { MessageService } from "../message.service";
+import { Router , NavigationExtras } from "@angular/router";
 
 @Component({
   selector: 'app-auth',
@@ -21,7 +22,8 @@ export class AuthComponent implements OnInit {
 
   constructor(
     private authService : AuthService,
-    private messageService : MessageService
+    private messageService : MessageService,
+    private router : Router
   ) { }
 
   ngOnInit() {
@@ -32,6 +34,10 @@ export class AuthComponent implements OnInit {
     this.authService.signIn(login,password).then(
       () => {
         this.authStatus = this.authService.isAuth;
+        let navigationExtras : NavigationExtras = {
+          queryParams: this.authService.user.listeVilleFavorie
+        }
+        this.router.navigate(['meteo'],navigationExtras);
       }
     );
     this.log = "";
@@ -42,6 +48,7 @@ export class AuthComponent implements OnInit {
   onSignOut() {
     this.authService.signOut()
     this.authStatus = this.authService.isAuth;
+    this.router.navigate(['/']);
   }
 
 
