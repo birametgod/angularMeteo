@@ -16,7 +16,8 @@ export class AuthComponent implements OnInit {
   pass:string;
 
   users : User[] = [] ;
-  authStatus : Boolean ;
+  authStatus : boolean ;
+  message : string ;
 
   constructor(
     private authService : AuthService,
@@ -24,19 +25,16 @@ export class AuthComponent implements OnInit {
   ) { }
 
   ngOnInit() {
+    this.authStatus = this.authService.isAuth;
   }
 
   onSignIn(login:string , password:string) {
     this.authService.signIn(login,password).then(
       () => {
         this.authStatus = this.authService.isAuth;
-        /*if (!this.authStatus) {
-          this.messageService.addMessage("identifiant incorrecte");
-        }
-        //this.authStatus ?  : this.messageService.addMessage("");
-        console.log(this.messageService.message);*/
       }
-    )
+    );
+    this.authService.isAuth ? this.messageService.addMessage("") : this.messageService.addMessage("identifiant incorrecte");
   }
 
   onSignOut() {

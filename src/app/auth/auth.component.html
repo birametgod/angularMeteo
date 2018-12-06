@@ -3,4 +3,5 @@
 <input type="text" [(ngModel)]="pass">
 <button class="btn btn-success" *ngIf="!authStatus" (click)="onSignIn(log,pass)">Se connecter</button>
 <button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>
+<div *ngIf="message">{{message}}</div>
 <app-message></app-message>
