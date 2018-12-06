@@ -34,6 +34,8 @@ export class AuthComponent implements OnInit {
         this.authStatus = this.authService.isAuth;
       }
     );
+    this.log = "";
+    this.pass= "";
     this.authService.isAuth ? this.messageService.addMessage("") : this.messageService.addMessage("identifiant incorrecte");
   }
 
