@@ -27,7 +27,7 @@ export class AuthService {
               console.log(this.user);
               resolve(true);
             }
-          })
+          });
           console.log(this.isAuth);
         },
         (error) => {
