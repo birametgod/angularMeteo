@@ -6,12 +6,14 @@ import { AuthComponent } from './auth/auth.component';
 import { FormsModule } from "@angular/forms";
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './/app-routing.module';
+import { MeteoComponent } from './meteo/meteo.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     AuthComponent,
-    MessageComponent
+    MessageComponent,
+    MeteoComponent
   ],
   imports: [
     BrowserModule,
