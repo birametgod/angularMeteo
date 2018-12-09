@@ -23,6 +23,22 @@ export class MeteoVilleComponent implements OnInit {
     });
   }
 
+  weatherIcon(icon) {
+    switch (icon) {
+      case 'light rain':
+        return 'wi wi-day-rain-wind'
+      case 'clear sky':
+        return 'wi wi-day-sunny'
+      case 'broken clouds':
+        return 'wi wi-cloudy'
+      case 'partly-cloudy-night':
+        return 'wi wi-night-partly-cloudy'
+      default:
+        return `wi wi-day-sunny`
+    }
+  }
+
+
   kToF(kTemp:number) : number {
     let kToCel = ((kTemp - 273.15)*1.8)+32;
     return Math.round(kToCel);

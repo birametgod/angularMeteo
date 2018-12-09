@@ -1,10 +1,26 @@
 <div *ngIf="!authStatus">
   <h2>Authentification</h2>
-<input type="text" [(ngModel)]="log">
-<input type="text" [(ngModel)]="pass">
-<button class="btn btn-success" (click)="onSignIn(log,pass)">Se connecter</button>
+  <form class="example-form">
+      <mat-form-field class="example-full-width">
+          <input type="text" matInput placeholder="Login" [(ngModel)]="log" name="log">
+      </mat-form-field>
+      <mat-form-field class="example-full-width">
+          <input type="text" matInput placeholder="Password" [(ngModel)]="pass" name="first">
+      </mat-form-field>
+      <button
+        class="btn btn-success"
+        mat-raised-button color="primary"
+        (click)="onSignIn(log,pass)">Se connecter</button>
+  </form>
+</div>
+<br>
+<div class="offset-10">
+    <button
+    *ngIf="authStatus"
+    mat-raised-button color="primary"
+    (click)="onSignOut()">Se déconnecter</button>
 </div>
 
-<button class="btn btn-danger" *ngIf="authStatus" (click)="onSignOut()">Se déconnecter</button>
 <div *ngIf="message">{{message}}</div>
 <app-message></app-message>
+

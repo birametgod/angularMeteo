@@ -1,7 +1,22 @@
-  {{ kToC(dataWeather.main.temp)}}
-  {{ kToF(dataWeather.main.temp)}}
-  {{dataWeather.main.humidity}}
-  {{dataWeather.wind.speed}}
-  <div *ngFor="let weather of dataWeather.weather">
-      {{weather.description}}
+  <div>
+    <div>
+      <h1>{{dataWeather.name}}</h1>
+    </div>
+    <div class="row">
+        <div *ngFor="let weather of dataWeather.weather">
+            <i [class]="weatherIcon(weather.description)"></i>
+        </div>
+      <h4 class="offset-1"> {{kToC(dataWeather.main.temp)}} <i class="wi wi-celsius"></i></h4>
+      <h4 class="offset-1"> {{kToF(dataWeather.main.temp)}} <i class="wi wi-fahrenheit"></i></h4>
+    </div>
+    <div class="row">
+        <p>{{dataWeather.main.humidity}} <i class="wi wi-humidity"></i></p>
+        <p class="offset-3">{{dataWeather.wind.speed}} <i class="wi wi-strong-wind"></i></p>
+    </div>
+    <div>
+    </div>
+      <div *ngFor="let weather of dataWeather.weather">
+          <h3>{{weather.description}}</h3>
+      </div>
   </div>
+
