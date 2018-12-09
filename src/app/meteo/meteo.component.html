@@ -1,4 +1,21 @@
 <app-auth></app-auth>
-<p>
-  meteo works!
-</p>
+<h1>La liste de vos villes favorites</h1>
+<div class="row">
+    <ul class="list-group col-lg-8">
+        <li class="list-group-item"
+          *ngFor="let item of villeFav">
+            {{item}}
+        </li>
+    </ul>
+</div>
+<br>
+<div class="row">
+  <input type="text" class="text" placeholder= "Entrez une ville" [(ngModel)]="ville">
+  <button class="btn btn-success" (click) = "onSubmit(ville)">Rechercher</button>
+</div>
+
+<div class="row" *ngIf="meteo">
+  {{meteo.main.temp}}
+  {{meteo.main.humidity}}
+  {{meteo.wind.speed}}
+</div>

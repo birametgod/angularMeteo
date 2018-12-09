@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { MeteoService } from "../meteo.service";
 
 
 @Component({
@@ -9,16 +10,27 @@ import { ActivatedRoute } from '@angular/router';
 })
 export class MeteoComponent implements OnInit {
 
+  villeFav : string[];
+  meteo : any;
+  ville : any ;
   constructor(
-    private route: ActivatedRoute
+    private route: ActivatedRoute,
+    private meteoService: MeteoService
   ) { }
 
   ngOnInit() {
     this.getVille();
   }
 
+  onSubmit(ville:string) {
+    this.meteoService.getMeteo(ville).subscribe(resultat => {
+      this.meteo = resultat;
+      console.log(resultat);
+    });
+  }
+
   getVille():void {
-    this.route.queryParams.subscribe(params => console.log(params));
+    this.route.queryParams.subscribe(params => this.villeFav = Object.values(params));
   }
 
 }

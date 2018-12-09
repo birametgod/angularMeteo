@@ -8,6 +8,7 @@ import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MeteoComponent } from './meteo/meteo.component';
 
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -19,7 +20,8 @@ import { MeteoComponent } from './meteo/meteo.component';
     BrowserModule,
     HttpClientModule,
     FormsModule,
-    AppRoutingModule
+    AppRoutingModule,
+
   ],
   providers: [],
   bootstrap: [AppComponent]
