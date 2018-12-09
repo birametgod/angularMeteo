@@ -16,7 +16,7 @@ export class MeteoComponent implements OnInit {
   constructor(
     private route: ActivatedRoute,
     private meteoService: MeteoService
-  ) { }
+  ) {}
 
   ngOnInit() {
     this.getVille();
@@ -25,7 +25,7 @@ export class MeteoComponent implements OnInit {
   onSubmit(ville:string) {
     this.meteoService.getMeteo(ville).subscribe(resultat => {
       this.meteo = resultat;
-      console.log(resultat);
+      console.log('le resultat',this.meteo);
     });
   }
 

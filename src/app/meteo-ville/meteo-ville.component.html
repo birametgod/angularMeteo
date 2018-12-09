@@ -1,0 +1,7 @@
+  {{ kToC(dataWeather.main.temp)}}
+  {{ kToF(dataWeather.main.temp)}}
+  {{dataWeather.main.humidity}}
+  {{dataWeather.wind.speed}}
+  <div *ngFor="let weather of dataWeather.weather">
+      {{weather.description}}
+  </div>
