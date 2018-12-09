@@ -13,9 +13,7 @@
   <input type="text" class="text" placeholder= "Entrez une ville" [(ngModel)]="ville">
   <button class="btn btn-success" (click) = "onSubmit(ville)">Rechercher</button>
 </div>
-
+<app-message></app-message>
 <div class="row" *ngIf="meteo">
-  {{meteo.main.temp}}
-  {{meteo.main.humidity}}
-  {{meteo.wind.speed}}
+  <app-meteo-ville [dataWeather]="meteo"></app-meteo-ville>
 </div>

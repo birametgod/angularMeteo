@@ -7,6 +7,7 @@ import { FormsModule } from "@angular/forms";
 import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MeteoComponent } from './meteo/meteo.component';
+import { MeteoVilleComponent } from './meteo-ville/meteo-ville.component';
 
 
 @NgModule({
@@ -14,7 +15,8 @@ import { MeteoComponent } from './meteo/meteo.component';
     AppComponent,
     AuthComponent,
     MessageComponent,
-    MeteoComponent
+    MeteoComponent,
+    MeteoVilleComponent
   ],
   imports: [
     BrowserModule,
