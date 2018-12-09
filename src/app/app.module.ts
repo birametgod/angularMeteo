@@ -8,6 +8,12 @@ import { MessageComponent } from './message/message.component';
 import { AppRoutingModule } from './/app-routing.module';
 import { MeteoComponent } from './meteo/meteo.component';
 import { MeteoVilleComponent } from './meteo-ville/meteo-ville.component';
+import {BrowserAnimationsModule} from '@angular/platform-browser/animations';
+import {MatButtonModule, MatCheckboxModule} from '@angular/material';
+import {MatInputModule} from '@angular/material/input';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatListModule} from '@angular/material/list';
+import {MatTableModule} from '@angular/material/table';
 
 
 @NgModule({
@@ -16,14 +22,20 @@ import { MeteoVilleComponent } from './meteo-ville/meteo-ville.component';
     AuthComponent,
     MessageComponent,
     MeteoComponent,
-    MeteoVilleComponent
+    MeteoVilleComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     FormsModule,
     AppRoutingModule,
-
+    BrowserAnimationsModule,
+    MatButtonModule,
+    MatCheckboxModule,
+    MatInputModule,
+    MatToolbarModule,
+    MatListModule,
+    MatTableModule
   ],
   providers: [],
   bootstrap: [AppComponent]
